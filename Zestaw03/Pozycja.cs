@@ -22,7 +22,7 @@ namespace Zestaw03
         }
 
      
-         public void WypiszInfo()
+         public virtual void WypiszInfo()
         {
             Console.WriteLine("Tytuł: " + tytul);
             Console.WriteLine("Id: " + id);

@@ -15,14 +15,17 @@ namespace Zestaw03
         {
         }
 
-        public Katalog(string dzialTermiczny)
+        public Katalog(string dzialTematyczny)
         {
-            this.dzialTematyczny = dzialTermiczny;
+            this.dzialTematyczny = dzialTematyczny;
         }
 
         public void DodajPozycje(Pozycja pozycja)
         {
             pozycje.Add(pozycja);
         }
+
+
+
     }
 }
