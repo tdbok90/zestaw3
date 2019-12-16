@@ -9,7 +9,7 @@ namespace Zestaw03
     class  Katalog
     {
         private string dzialTematyczny;
-        List<Pozycja> pozycje = new List<Pozycja>;
+        private List<Pozycja> pozycje = new List<Pozycja>();
 
         public Katalog()
         {
