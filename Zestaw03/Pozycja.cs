@@ -21,14 +21,18 @@ namespace Zestaw03
             this.rokWydania = rokWydania;
         }
 
-     
-         public virtual void WypiszInfo()
+        public int Id { get => id; set => id = value; }
+        public string Tytul { get => tytul; set => tytul = value; }
+        public string Wydawnictwo { get => wydawnictwo; set => wydawnictwo = value; }
+
+        public virtual void WypiszInfo()
         {
             Console.WriteLine("Tytuł: " + tytul);
             Console.WriteLine("Id: " + id);
             Console.WriteLine("Wydawnictwo: " + wydawnictwo);
             Console.WriteLine("Rok wydania: " + rokWydania );
         }
+
 
 
 

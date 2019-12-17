@@ -11,6 +11,7 @@ namespace Zestaw03
         private string dzialTematyczny;
         private List<Pozycja> pozycje = new List<Pozycja>();
 
+
         public Katalog()
         {
         }
@@ -20,12 +21,37 @@ namespace Zestaw03
             this.dzialTematyczny = dzialTematyczny;
         }
 
+        internal List<Pozycja> Pozycje { get => pozycje; set => pozycje = value; }
+
         public void DodajPozycje(Pozycja pozycja)
         {
             pozycje.Add(pozycja);
         }
 
+        public Pozycja znajdzPozycje(int id)
+        {
+            for (int i=0;i<pozycje.Count;i++)
+            {
+                if (pozycje[i].Id == id)
+                {
+                    return pozycje[i];
+                }
+             
+            }
+            return null;
+        }
+        public Pozycja znajdzPozycje(string tytul, string wydawnictwo)
+        {
+            for (int i = 0; i < pozycje.Count; i++)
+            {
+                if (pozycje[i].Tytul.Contains(tytul) || pozycje[i].Wydawnictwo.Contains(wydawnictwo))
+                {
+                    return pozycje[i];
+                }
 
+            }
+            return null;
+        }
 
     }
 }

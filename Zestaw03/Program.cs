@@ -27,8 +27,28 @@ namespace Zestaw03
             historiaSwiata.WypiszInfo();
             Console.WriteLine();
             kobietyZeSlynnychObrazow.WypiszInfo();
+            Console.WriteLine();
+            int id = 1;
+            Pozycja szukanaPozycja = historia.znajdzPozycje(id);
+            Console.WriteLine("Pozycja szukana po id= " + id);
+            if (szukanaPozycja != null)
+            {
+                szukanaPozycja.WypiszInfo();
+            }
+            else
+            {
+                Console.WriteLine("Nie znaleziono pozycj.");
+            }
+
+            Console.WriteLine();
+            szukanaPozycja = historia.znajdzPozycje("Biblia", "Maryjne");
+            Console.WriteLine("Szukana pozycja po tytule i wydawnictwu");
+            szukanaPozycja.WypiszInfo();
+
 
             Console.ReadLine();
+
+          
         }
     }
 }
