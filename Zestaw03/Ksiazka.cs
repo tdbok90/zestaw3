@@ -9,7 +9,7 @@ namespace Zestaw03
     class Ksiazka : Pozycja
     {
         private int liczbaStron;
-        private Autor autor;
+        private List<Autor> autorzy;
 
         public Ksiazka()
         {
@@ -17,10 +17,10 @@ namespace Zestaw03
         
       
 
-        public Ksiazka(string tytul, int id, string wydawnictwo, int rokWydania, int liczbaStron, Autor autor) : base(tytul, id, wydawnictwo, rokWydania)
+        public Ksiazka(string tytul, int id, string wydawnictwo, int rokWydania, int liczbaStron, List<Autor> autorzy) : base(tytul, id, wydawnictwo, rokWydania)
         {
             this.liczbaStron = liczbaStron;
-            this.autor = autor;
+            this.autorzy = autorzy;
         }
 
       
@@ -28,7 +28,11 @@ namespace Zestaw03
         {
             base.WypiszInfo();
             Console.WriteLine("LiczbaStron: " + liczbaStron);
-            Console.WriteLine("Autor: " + autor.Imie + " " + autor.Nazwisko);
+            autorzy.ForEach(delegate (Autor autor)
+            {
+                Console.WriteLine("Autor: " + autor.Imie + "  " + autor.Nazwisko);
+            });
+       
         }
     }
 

@@ -14,10 +14,22 @@ namespace Zestaw03
 
             Autor autor1 = new Autor("Jan", "Niziołek");
             Autor autor2 = new Autor("Krzysztof", "Szczeka");
+            List<Autor> pierwsiAutorzy = new List<Autor>();
+            pierwsiAutorzy.Add(autor1);
+            pierwsiAutorzy.Add(autor2);
+
+
+            Autor autor3 = new Autor("Tadeusz", "Bak");
+            Autor autor4 = new Autor("Sandra", "Michalczyk" );
+            List<Autor> drudzyAutorzy = new List<Autor>();
+            drudzyAutorzy.Add(autor3);
+            drudzyAutorzy.Add(autor4);
+
             Katalog historia = new Katalog("Historyczny");
-            Pozycja biblia = new Ksiazka("Biblia", 1, "Maryjne", 1992, 1000, autor1);
-            Pozycja historiaSwiata = new Ksiazka("Historia świata", 2, "ISBN", 2008, 234, autor2);
-            Pozycja kobietyZeSlynnychObrazow = new Ksiazka("Kobiety ze słynnych obrazów",3, "Wydawnictwo Lira", 2019, 336, new Autor("Iwona", "Kienzler"));
+            Pozycja biblia = new Ksiazka("Biblia", 1, "Maryjne", 1992, 1000, pierwsiAutorzy);
+            Pozycja historiaSwiata = new Ksiazka("Historia świata", 2, "ISBN", 2008, 234, pierwsiAutorzy);
+            Pozycja kobietyZeSlynnychObrazow = new Ksiazka("Kobiety ze słynnych obrazów",3, "Wydawnictwo Lira", 2019, 336, drudzyAutorzy);
+            Pozycja programistaMagazyn = new Czasopismo("Programista Polski", 5, "Nauka i rodzina", 2019, 12);
             historia.DodajPozycje(biblia);
             historia.DodajPozycje(historiaSwiata);
             historia.DodajPozycje(kobietyZeSlynnychObrazow);
@@ -44,7 +56,9 @@ namespace Zestaw03
             szukanaPozycja = historia.znajdzPozycje("Biblia", "Maryjne");
             Console.WriteLine("Szukana pozycja po tytule i wydawnictwu");
             szukanaPozycja.WypiszInfo();
-
+            Console.WriteLine();
+            
+            
 
             Console.ReadLine();
 
