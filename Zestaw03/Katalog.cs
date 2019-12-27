@@ -21,12 +21,17 @@ namespace Zestaw03
             this.dzialTematyczny = dzialTematyczny;
         }
 
+    
+
+        public string DzialTematyczny { get => dzialTematyczny; set => dzialTematyczny = value; }
         internal List<Pozycja> Pozycje { get => pozycje; set => pozycje = value; }
+  
 
         public void DodajPozycje(Pozycja pozycja)
         {
             pozycje.Add(pozycja);
         }
+
 
         public Pozycja znajdzPozycje(int id)
         {
@@ -51,6 +56,17 @@ namespace Zestaw03
 
             }
             return null;
+        }
+
+        public void WypiszWszystkiePozycje()
+        {
+            foreach (Pozycja pozycja in pozycje)
+            {
+
+                Console.WriteLine(pozycja.Tytul + " ");
+
+            }
+            Console.WriteLine();
         }
 
     }

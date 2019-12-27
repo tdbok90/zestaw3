@@ -46,7 +46,7 @@ namespace Zestaw03
             if (szukanaPozycja != null)
             {
                 szukanaPozycja.WypiszInfo();
-            }
+            } 
             else
             {
                 Console.WriteLine("Nie znaleziono pozycj.");
@@ -57,8 +57,20 @@ namespace Zestaw03
             Console.WriteLine("Szukana pozycja po tytule i wydawnictwu");
             szukanaPozycja.WypiszInfo();
             Console.WriteLine();
-            
-            
+
+
+           
+            Bibliotekarz nowaOsoba = new Bibliotekarz("Karol", "Bąk", "17-01-2019", 4500);
+            Bibliotekarz nowaOsoba1 = new Bibliotekarz("Sandra", "Bąk", "15-01-2020", 3600);
+            Biblioteka bibliotekaRadosna = new Biblioteka();
+            bibliotekaRadosna.DodajBibliotekarza(nowaOsoba);
+            bibliotekaRadosna.DodajBibliotekarza(nowaOsoba1);
+            bibliotekaRadosna.WypiszBibliotekarzy();
+
+            bibliotekaRadosna.WypiszWszystkiePozycje();
+
+            Console.WriteLine();
+            historia.WypiszWszystkiePozycje();
 
             Console.ReadLine();
 
